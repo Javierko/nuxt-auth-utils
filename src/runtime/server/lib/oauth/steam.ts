@@ -46,7 +46,7 @@ export function defineOAuthSteamEventHandler({ config, onSuccess, onError }: OAu
         'openid.ns': 'http://specs.openid.net/auth/2.0',
         'openid.mode': 'checkid_setup',
         'openid.return_to': redirectURL,
-        'openid.realm': `${url.protocol}//${url.hostname}`,
+        'openid.realm': `${url.protocol}//${url.hostname}${url.port ? ':' + url.port : ''}`,
         'openid.identity': 'http://specs.openid.net/auth/2.0/identifier_select',
         'openid.claimed_id': 'http://specs.openid.net/auth/2.0/identifier_select',
       }
